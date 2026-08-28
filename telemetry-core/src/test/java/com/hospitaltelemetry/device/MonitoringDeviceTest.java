@@ -20,8 +20,7 @@ public class MonitoringDeviceTest {
 
     @BeforeEach
     void setUp(){
-        monitoringDevice = new MonitoringDevice(VALID_DEVICE_CODE, VALID_DEVICE_TYPE, VALID_REGISTERED_AT
-        );
+        monitoringDevice = new MonitoringDevice(VALID_DEVICE_CODE, VALID_DEVICE_TYPE, VALID_REGISTERED_AT);
     }
 
     @Test
