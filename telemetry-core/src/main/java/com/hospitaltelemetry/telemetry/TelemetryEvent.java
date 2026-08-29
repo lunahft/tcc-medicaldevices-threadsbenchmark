@@ -34,6 +34,15 @@ public class TelemetryEvent {
         this.measuredAt = measuredAt;
         this.receivedAt = receivedAt;
     }
+    void assignId(Long id){
+        if(this.id != null){
+            throw new IllegalStateException("this event already has an id");
+        }
+        if(id == null || id <= 0){
+            throw new IllegalArgumentException("id must not be null and must be greater than zero");
+        }
+        this.id = id;
+    }
     public Long getId() {
         return id;
     }
