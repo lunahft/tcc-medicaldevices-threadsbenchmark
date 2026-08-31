@@ -1,7 +1,9 @@
 package com.hospitaltelemetry.device;
 
 import java.time.Instant;
+
 import com.hospitaltelemetry.device.exception.DeviceNotAssignedException;
+import com.hospitaltelemetry.device.exception.InvalidDeviceStateException;
 
 public class MonitoringDevice {
     private Long id;
@@ -53,6 +55,9 @@ public class MonitoringDevice {
     }
 
     public void deactivate(){
+        if(status == DeviceStatus.INACTIVE){
+            throw new IllegalStateException("Device is already inactive");
+        }
         this.status = DeviceStatus.INACTIVE;
     }
 
@@ -61,6 +66,9 @@ public class MonitoringDevice {
     }
 
     public void activate(){
+        if(status == DeviceStatus.ACTIVE){
+            throw new IllegalStateException("Device is already active");
+        }
         this.status = DeviceStatus.ACTIVE;
     }
 
