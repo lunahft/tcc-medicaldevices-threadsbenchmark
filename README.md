@@ -8,4 +8,6 @@ entre Platform Threads e Virtual Threads em Java.
 
 ## Status
 
-Desenvolvimento dos POJOs.
+Modulo telemetry-core criado. 
+
+Desenvolvimento do modulo telemetry-api.
