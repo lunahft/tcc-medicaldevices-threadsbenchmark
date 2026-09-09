@@ -20,6 +20,7 @@
 
     <modules>
         <module>telemetry-core</module>
+        <module>telemetry-api</module>
     </modules>
 
 </project>
