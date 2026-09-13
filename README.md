@@ -9,5 +9,6 @@ entre Platform Threads e Virtual Threads em Java.
 ## Status
 
 Modulo telemetry-core criado. 
+Modulo telemetry-api criado.
 
-Desenvolvimento do modulo telemetry-api.
+Desenvolvimento do repositorio em PostgreSQL.
