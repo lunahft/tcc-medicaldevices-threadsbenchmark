@@ -2,6 +2,7 @@ package com.hospitaltelemetry.api.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 import com.hospitaltelemetry.patient.PatientRepository;
 import com.hospitaltelemetry.patient.PatientService;
@@ -18,6 +19,7 @@ import com.hospitaltelemetry.telemetry.TelemetryQueryService;
 public class CoreConfig {
 
     @Bean
+    @Profile("!postgres")
     public PatientRepository patientRepository(){
         return new InMemoryPatientRepository();
     }

@@ -34,6 +34,32 @@ public class Patient {
         this.status = PatientStatus.ACTIVE;
     }
     
+    public static Patient restore(
+        Long id,
+        String patientCode,
+        String unitCode,
+        String bedCode,
+        PatientStatus status,
+        Instant admittedAt,
+        Instant dischargedAt
+    ) {
+        if (status == null){
+            throw new IllegalArgumentException("status cannot be null");
+        }
+        if (status != PatientStatus.DISCHARGED && dischargedAt != null){
+            throw new IllegalArgumentException("Only discharged patients can have dischargedAt");
+        }
+
+        Patient patient = new Patient(patientCode, unitCode, bedCode, admittedAt);
+        patient.assignId(id);
+        switch (status) {
+            case ACTIVE -> { }
+            case DISCHARGED -> patient.discharge(dischargedAt);
+            case INACTIVE -> patient.deactivate();
+        }
+        return patient;
+    }
+
     public Long getId(){
         return id;
     }
